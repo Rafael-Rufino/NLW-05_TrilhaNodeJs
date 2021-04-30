@@ -1,10 +1,17 @@
-import {Entity, PrimaryColumn, CreateDateColumn, Column, ManyToMany, JoinColumn, ManyToOne} from 'typeorm';
+import {
+    Entity,
+    PrimaryColumn,
+    CreateDateColumn,
+    Column,
+    JoinColumn,
+    ManyToOne
+} from 'typeorm';
 
-import {v4 as uuid} from "uuid";
-import {User} from "./User";
+import { v4 as uuid } from "uuid";
+import { User } from "./User";
 
 @Entity("messages")
-class Message{
+class Message {
     @PrimaryColumn()
     id: string;
 
@@ -15,9 +22,9 @@ class Message{
     @Column()
     text: string;
 
-    @JoinColumn({name: "user_id"})
-    @ManyToOne(()=> User)
-    user:User;
+    @JoinColumn({ name: "user_id" })
+    @ManyToOne(() => User)
+    user: User;
 
 
     @Column()
@@ -26,12 +33,12 @@ class Message{
     @CreateDateColumn()
     create_at: Date;
 
-    constructor(){
-        if(!this.id){
+    constructor() {
+        if (!this.id) {
             this.id = uuid();
         }
 
     }
 }
 
-export {Message};
+export { Message };

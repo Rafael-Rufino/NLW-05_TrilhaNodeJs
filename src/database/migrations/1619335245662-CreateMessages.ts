@@ -1,4 +1,4 @@
-import {MigrationInterface, QueryRunner, Table} from "typeorm";
+import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
 export class CreateMessages1619335245662 implements MigrationInterface {
 
@@ -6,7 +6,7 @@ export class CreateMessages1619335245662 implements MigrationInterface {
         await queryRunner.createTable(
             new Table({
                 name: "messages",
-                columns:[
+                columns: [
                     {
                         name: "id",
                         type: "uuid",
@@ -34,18 +34,18 @@ export class CreateMessages1619335245662 implements MigrationInterface {
 
                     },
                 ],
-                foreignKeys:[
+                foreignKeys: [
                     {
                         name: "FKUser",
                         referencedTableName: "users",
-                        referencedColumnNames:["id"],
+                        referencedColumnNames: ["id"],
                         columnNames: ["user_id"],
                         onDelete: "SET NULL",
-                        onUpdate: "SET NULL", 
+                        onUpdate: "SET NULL",
 
 
-                    }
-                ]
+                    },
+                ],
             })
         );
     }

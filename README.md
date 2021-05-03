@@ -88,8 +88,11 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 
   
   # Acessar o Servidor no Navegador
-  $ http://localhost:3000
-
+  # Cliente
+  $ http://localhost:3000/pages/client
+  
+  # Admins
+  $ http://localhost:3000/pages/admin
 
  
   # Porta de Acesso Liberado
